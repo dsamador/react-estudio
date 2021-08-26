@@ -7,21 +7,24 @@ import ProjectsPage from '../pages/ProjectsPage';
 import ProjectPage from '../pages/ProjectPage';
 import UsersPage from '../pages/admin/UsersPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import Layout from '../components/layouts/Layout';
 
 export default function AppRouter() {
     return (
         <Router>
-            <Switch>
-                <Route exact path="/" component={HomePage}/>
-                <Route exact path="/login" component={LoginPage}/>
-                <Route exact path="/register" component={RegisterPage}/>
-                <Route exact path="/account" component={AccountPage}/>
-                <Route exact path="/projects" component={ProjectsPage}/>
-                <Route exact path="/project/:projectId" component={ProjectPage}/>
-                <Route exact path="/admin/users" component={UsersPage}/>
-                
-                <Route path="*" component={NotFoundPage}/>
-            </Switch>
+            <Layout>
+                <Switch>
+                    <Route exact path="/" component={HomePage}/>
+                    <Route exact path="/login" component={LoginPage}/>
+                    <Route exact path="/register" component={RegisterPage}/>
+                    <Route exact path="/account" component={AccountPage}/>
+                    <Route exact path="/projects" component={ProjectsPage}/>
+                    <Route exact path="/project/:projectId" component={ProjectPage}/>
+                    <Route exact path="/admin/users" component={UsersPage}/>
+                    
+                    <Route path="*" component={NotFoundPage}/>
+                </Switch>
+            </Layout>
         </Router>
     )
 }
