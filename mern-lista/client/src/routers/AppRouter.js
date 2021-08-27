@@ -23,7 +23,7 @@ export default function AppRouter() {
                     <PrivateRoute exact path="/account" component={AccountPage}/>
                     <PrivateRoute exact path="/projects" component={ProjectsPage}/>
                     <PrivateRoute exact path="/project/:projectId" component={ProjectPage}/>
-                    <PrivateRoute exact path="/admin/users" component={UsersPage}/>
+                    <PrivateRoute hasRole="admin" exact path="/admin/users" component={UsersPage}/>
                     
                     <Route path="*" component={NotFoundPage}/>
                 </Switch>
