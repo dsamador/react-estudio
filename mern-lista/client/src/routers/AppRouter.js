@@ -10,15 +10,16 @@ import NotFoundPage from '../pages/NotFoundPage';
 import Layout from '../components/layouts/Layout';
 
 import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute';
 
 export default function AppRouter() {
     return (
         <Router>
             <Layout>
                 <Switch>
-                    <Route exact path="/" component={HomePage}/>
-                    <Route exact path="/login" component={LoginPage}/>
-                    <Route exact path="/register" component={RegisterPage}/>
+                    <PublicRoute exact path="/" component={HomePage}/>
+                    <PublicRoute exact path="/login" component={LoginPage}/>
+                    <PublicRoute exact path="/register" component={RegisterPage}/>
                     <PrivateRoute exact path="/account" component={AccountPage}/>
                     <PrivateRoute exact path="/projects" component={ProjectsPage}/>
                     <PrivateRoute exact path="/project/:projectId" component={ProjectPage}/>
