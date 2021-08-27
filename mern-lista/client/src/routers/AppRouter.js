@@ -11,6 +11,7 @@ import Layout from '../components/layouts/Layout';
 
 import PrivateRoute from './PrivateRoute'
 import PublicRoute from './PublicRoute';
+import roles from '../helpers/roles';
 
 export default function AppRouter() {
     return (
@@ -23,7 +24,7 @@ export default function AppRouter() {
                     <PrivateRoute exact path="/account" component={AccountPage}/>
                     <PrivateRoute exact path="/projects" component={ProjectsPage}/>
                     <PrivateRoute exact path="/project/:projectId" component={ProjectPage}/>
-                    <PrivateRoute hasRole="admin" exact path="/admin/users" component={UsersPage}/>
+                    <PrivateRoute hasRole={roles.admin} exact path="/admin/users" component={UsersPage}/>
                     
                     <Route path="*" component={NotFoundPage}/>
                 </Switch>
