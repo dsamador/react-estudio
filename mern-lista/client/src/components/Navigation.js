@@ -21,7 +21,7 @@ export default function Navigation() {
                 <Nav>
                     <Nav.Link as={NavLink} to={routes.login}>Iniciar Sesión</Nav.Link>
                     <Nav.Link as={NavLink} to={routes.register}>Registrarse</Nav.Link>
-                    <Nav.Link as={NavLink} to={routes.accounts}>Mi cuenta</Nav.Link>
+                    <Nav.Link as={NavLink} to={routes.account}>Mi cuenta</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
