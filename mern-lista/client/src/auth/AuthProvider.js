@@ -13,7 +13,10 @@ export const AuthContext = createContext();
 
 
 export default function AuthProvider({children}) {
-    const [user, setUser] = useState({id: 1, roles: roles.regular})
+    const [user, setUser] = useState(null);
+
+    const login = ()=> setUser({id: 1, roles: roles.regular})
+    const logout = ()=> setUser(null)
 
     /* comprobar que el usuario exista, si existe retorna true, sino false */
     /* con la doble negación convertimos un valor a tipo boolean */
@@ -24,7 +27,9 @@ export default function AuthProvider({children}) {
     const contextValue = {
         user,
         isLogged,
-        hasRole
+        hasRole,
+        login,
+        logout
 
     }
 
