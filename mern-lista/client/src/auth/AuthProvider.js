@@ -15,7 +15,7 @@ export const AuthContext = createContext();
 export default function AuthProvider({children}) {
     const [user, setUser] = useState(null);
 
-    const login = ()=> setUser({id: 1, roles: roles.regular})
+    const login = (userCredentials)=> setUser({id: 1, roles: roles.regular})
     const logout = ()=> setUser(null)
 
     /* comprobar que el usuario exista, si existe retorna true, sino false */
